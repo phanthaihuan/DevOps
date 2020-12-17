@@ -1,0 +1,5 @@
+https://www.ssltrust.com.au/help/setup-guides/haproxy2-layer7-retries-keepalived
+
+https://kipalog.com/posts/Setup-Haproxy-and-Keepalived
+
+https://severalnines.com/database-blog/how-clustercontrol-configures-virtual-ip-and-what-expect-during-failover
