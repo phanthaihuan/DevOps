@@ -1,0 +1,12 @@
+link: https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling
+forward proxy: tunnel/gateway
+reverse proxy: control and protect access to backend servers (load balancing, authentication, decryption, caching).
+
+X-Forwarded-For 
+Identifies the originating IP addresses of a client connecting to a web server through an HTTP proxy or a load balancer.
+
+X-Forwarded-Host 
+Identifies the original host requested that a client used to connect to your proxy or load balancer.
+
+X-Forwarded-Proto 
+identifies the protocol (HTTP or HTTPS) that a client used to connect to your proxy or load balancer.
