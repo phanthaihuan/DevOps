@@ -1,0 +1,14 @@
+https://www.redhat.com/sysadmin/backup-dirs
+
+/etc
+/home
+/var
+/usr/local/bin
+/usr/local/sbin
+/root
+/srv
+/opt
+
+config files
+data files
+log files (if needed)
