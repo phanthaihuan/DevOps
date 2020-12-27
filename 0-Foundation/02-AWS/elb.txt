@@ -1,0 +1,1 @@
+ELB has 4 types of load balancers.
