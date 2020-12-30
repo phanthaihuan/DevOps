@@ -1,1 +1,5 @@
 ELB has 4 types of load balancers.
+
+Application Load Balancer:
+1. best for HTTP, HTTPS
+2. mordern application architectures: microservices, containers.
