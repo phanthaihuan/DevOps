@@ -1,0 +1,39 @@
+https://binfalse.de/2016/11/25/mail-support-for-docker-s-php-fpm/
+
+FROM php:fpm
+MAINTAINER martin scharm <https://binfalse.de>
+
+# Install sSMTP for mail support
+RUN apt-get update \
+    && apt-get install -y -q --no-install-recommends \
+        ssmtp \
+    && apt-get clean \
+    && rm -r /var/lib/apt/lists/*
+
+
+
+FromLineOverride=YES
+mailhub=mail.server.tld
+hostname=php-fpm.yourdomain.tld
+UseTLS=YES
+UseSTARTTLS=YES
+
+php.ini
+-----
+[mail function]
+sendmail_path = "/usr/sbin/ssmtp -t"
+
+
+fpm:
+    restart: always
+    image: binfalse/php-fpm-extended
+    volumes:
+        # CONFIG
+        - /path/to/ssmtp.conf:/etc/ssmtp/ssmtp.conf:ro
+        - /path/to/php-mail.conf:/usr/local/etc/php/conf.d/mail.ini:ro
+        # PHP scripts
+        - /path/to/scripts:/scripts/:ro
+    logging:
+        driver: syslog
+        options:
+            tag: docker/fpm
